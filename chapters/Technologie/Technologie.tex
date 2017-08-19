@@ -23,7 +23,7 @@
 		\hline
 		Isotropes Ätzen&nasschemisches Ätzen\\ \hline
 		Anisotropes Ätzen&Plasmaätzen\\ \hline
-	\end{tabular}\\ 
+	\end{tabular}
 \end{minipage}
 \begin{minipage}[t]{0.5\textwidth}
 	\textbf{Dotieren}\\
@@ -34,7 +34,7 @@
 		3&p&Bor (B)\\ \hline
 		4&-&Silizium (Si)\\ \hline
 		5&n&Arsen (As), Phosphor (P)\\ \hline
-	\end{tabular} \\
+	\end{tabular} \\ [1ex]
 	\textbf{Säubern der Wafer}\\
 	\textbf{Ablauf CMOS Herstellungsprozess}\\
 	\includegraphics[width=1\textwidth, right]{chapters/Technologie/images/Verarbeitung}
@@ -42,22 +42,12 @@
 \end{minipage}
 
 \section{Passive Schaltungselemente in CMOS (Kap. 4)}
-
-\begin{minipage}[c]{0.22\textwidth}
-	Absolute Genauigkeit:\\Relative Genauigkeit:
-\end{minipage}
-\begin{minipage}[c]{0.06\textwidth}
-	$\pm \SI{20}{\percent}$\\ $\pm \SI{1}{\percent}$
-\end{minipage}
-\begin{minipage}[c]{0.5\textwidth}
-	(Wert vom einzelnen Element)\\(Verhältnis von Elementen zueinander)
-\end{minipage}\\[1ex]
-Da Verhältnisse sehr genau sind, werden sie in der Schaltungstechnik intensiv genutzt.
-
-\subsection{Kapazitäten}
-Auf einem Chip bilden sich zwischen zwei voneinander isolierten Elektroden Kapazitäten.
-\\[2ex]
-\begin{minipage}[c]{0.55\textwidth}
+\begin{minipage}[c]{0.59\textwidth}
+	Absolute Genauigkeit: $\pm \SI{20}{\percent}$ (Wert vom einzelnen Element)\\
+	Relative Genauigkeit: $\pm \SI{1}{\percent}$ (Verhältnis von Elementen zueinander) \\
+	Da Verhältnisse sehr genau sind, werden sie in der Schaltungstechnik intensiv genutzt. 
+	\subsection{Kapazitäten}
+	Auf einem Chip bilden sich zwischen zwei voneinander isolierten Elektroden Kapazitäten. \\
 	\begin{tabular}{|l|l|}
 		\hline
 		Poly-Poly-Kapazität ($Si$-$SiO_2$-$Si$) & $C'' \approx \SI{1}{\femto \farad \per \micro \meter ^2}$\\ \hline
@@ -65,40 +55,26 @@ Auf einem Chip bilden sich zwischen zwei voneinander isolierten Elektroden Kapaz
 		MIM-Kapazität (Metall-Isolator-Metall) & $C'' \approx \SI{1}{\femto \farad \per \micro \meter ^2}$ \\ \hline
 	\end{tabular}
 \end{minipage}
-%\begin{minipage}[c]{0.35\textwidth}
-%	Poly-Poly-Kapazität ($Si$-$SiO_2$-$Si$)\\
-%	MOS-Kapazität (Gate-Gateoxid-Kanal)\\
-%	MIM-Kapazität (Metall-Isolator-Metall)
-%\end{minipage}
-%\begin{minipage}[c]{0.2\textwidth}
-%	$C'' \approx \SI{1}{\femto \farad \per \micro \meter ^2}$\\
-%	$C'' \approx \SI{10}{\femto \farad \per \micro \meter ^2}$\\
-%	$C'' \approx \SI{1}{\femto \farad \per \micro \meter ^2}$
-%\end{minipage}
+\begin{minipage}[c]{0.41\textwidth}
+	\includegraphics[width=1\textwidth, right]{chapters/Technologie/images/Prozess}
+\end{minipage} \\ [1ex]
 \begin{minipage}[c]{0.45\textwidth}
 	\uline{\textbf{Legende:}}\\
 	$C''$: spezifische Kapazität pro Flächeneinheit\\
-	$d$:   Plattenabstand (meist durch Herstellung gegeben)
-	%
-\end{minipage}
-\\[2ex]
-\begin{minipage}[c]{0.55\textwidth}
-	\uline{\textbf{Formeln:}}\\
-	Kapazität/Fläche: $C'' = \frac{\epsilon}{d} = \frac{\epsilon_0 \cdot \epsilon_r}{d}$\\
-	Kapazität: \hspace{11.5mm}$C = C'' \cdot A$
-\end{minipage}
-\begin{minipage}[c]{0.45\textwidth}
+	$d$:   Plattenabstand (meist durch Herstellung gegeben) \\
 	\uline{\textbf{Konstanten:}}\\
 	$\epsilon_0 = 8.85 \cdot 10^{-12} \SI{}{\farad / \meter}$\\
 	$\epsilon_r = \SI{3.9}{}$ (für Siliziumoxid)
 \end{minipage}
-\\[2ex]
-Neben der gewünschten Kapazität hat jeder Plattenkondensator auch unerwünschte Streukapazitäten. 
-Beim Chip fällt vor allem die Streukapazität zwischen der unteren Elektrode und dem Substrat ins Gewicht.
+\begin{minipage}[c]{0.55\textwidth}
+	\uline{\textbf{Formeln:}}\\
+	Kapazität/Fläche: $C'' = \frac{\epsilon}{d} = \frac{\epsilon_0 \cdot \epsilon_r}{d}$\\
+	Kapazität: \hspace{11.5mm}$C = C'' \cdot A = \epsilon\cdot\frac{A}{d}=\epsilon_0\cdot\epsilon_r\cdot\frac{A}{d}$ \\
+	Neben der gewünschten Kapazität hat jeder Plattenkondensator auch unerwünschte Streukapazitäten. 
+	Beim Chip fällt vor allem die Streukapazität zwischen der unteren Elektrode und dem Substrat ins Gewicht.
+\end{minipage}
 
 \subsection{Widerstände}
-Unerwünscht auf dem Chip, da hoher Platzbedarf und Wärmeentwicklung.
-\\[2ex]
 \begin{minipage}[c]{0.55\textwidth}
 	\begin{tabular}{|l|l|}
 		\hline
