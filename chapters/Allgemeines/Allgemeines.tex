@@ -1,0 +1,39 @@
+% !TeX spellcheck = de_CH_frami
+
+\section{Allgemeines}
+
+\uline{\textbf{Begriffe:}}\\
+\begin{minipage}[c]{0.1\textwidth}
+	CMOS
+\end{minipage}
+\begin{minipage}[c]{0.8\textwidth}
+	complementary metal oxide semiconductor
+\end{minipage}\\[2ex]
+\begin{minipage}[t]{0.49\textwidth}
+	\uline{\textbf{Grosssignal Ersatzschaltung:}}\\
+	Die DC-Ersatzschaltung wird zur Berechnung des Arbeitspunktes, d.h. der Gleichspannungen und Gleichströme benötigt.
+	
+	\textbf{Grosssignal-Ersatzschaltung bilden}
+	\begin{itemize}
+		\item Reine AC-Spannungsquellen durch Kurzschlüsse ersetzen, AC-Spannungsquellen mit DC-Anteil durch Gleichspannungsquellen ersetzen
+		\item Reine AC-Stromquellen entfernen (d.h. durch Leerläufe ersetzen), AC-Stromquellen mit DC-Anteil durch Gleichstromquellen ersetzen
+		\item Kondensatoren entfernen (d.h. durch Leerläufe ersetzen)
+		\item Spulen in der Schaltung kurzschliessen (d.h. durch Kurzschlüsse ersetzen)
+	\end{itemize}
+\end{minipage}
+\begin{minipage}{0.02\textwidth}
+	
+\end{minipage}
+\begin{minipage}[t]{0.49\textwidth}
+	\uline{\textbf{Kleinsignal Ersatzschaltung:}}\\
+	AC- oder Kleinsignalersatzschaltung zur Berechnung der Verstärkungsfaktoren sowie der Ein- und Ausgangswiderstände der Schaltung.
+	
+	\textbf{Kleinsignal-Ersatzschaltung bilden}
+	\begin{itemize}
+		\item DC-Spannungsquellen durch Kurzschlüsse ersetzen
+		\item DC-Stromquellen entfernen (d.h. durch Leerläufe ersetzen)
+		\item Nichtlineare Bauteile durch ihre Kleinsignal-Ersatzschaltungen ersetzen. Das bedeutet vor allem, dass nichtlineare Widerstände durch den Kleinsignalwiderstand, den sie im Arbeitspunkt haben, ersetzt werden müssen.
+		\item Koppel- und Bypass-Kondensatoren (d.h. alle Kondensatoren, die wir als gross bezeichnen) kurzschliessen
+		\item Sperrdrosseln (d.h. alle Induktivitäten, die wir als gross bezeichnen) entfernen
+	\end{itemize}
+\end{minipage}

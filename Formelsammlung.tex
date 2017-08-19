@@ -1,0 +1,153 @@
+% LaTeX-Vorlage
+% mit ein paar n�tzlichen Abk�rzungen
+%
+% Autor:
+\author{Stefan~Hedinger}
+% Datum: heute  
+\date{\today}
+% Versionsnummer: 
+\newcommand{\versionsnummer}{1.0}
+
+% Titel: 
+\title{Analog Microelectronics \\[1ex] \large Nach der Vorlesung von Prof. Dr. Paul Zbinden (FS2016)\\[2ex] \small Version: \versionsnummer}
+%
+% DIN A4 Seite: 
+\documentclass[10pt,a4paper]{article}
+% viele packages: 
+% (die, die man nicht benötigt, kann weglassen)
+\usepackage{ngerman}
+\usepackage{curves}
+\usepackage{latexsym} % ein paar Symbole
+\usepackage{textcomp} % ein paar Symbole
+\usepackage{amsfonts}
+\usepackage{siunitx}  % SI Einheiten
+\usepackage{ulem}
+\usepackage[dvips]{rotating} % für rotate-Befehl
+\usepackage[utf8]{inputenc}
+%\usepackage[latin1]{inputenc} 
+\usepackage{geometry}
+%
+% Seitengeometrie festlegen:
+\geometry{left=1.5cm,textwidth=19cm,top=2cm,textheight=26cm}
+%
+% header & footer
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[L]{AnME}
+\fancyhead[C]{\leftmark}
+\fancyhead[R]{\thepage}
+\renewcommand{\headrulewidth}{0.4pt}
+\fancyfoot[L]{Stefan Hedinger}
+\fancyfoot[C]{\small{Dieses Dokument wurde mit \LaTeX{} erstellt.}}
+\fancyfoot[R]{\today}
+\renewcommand{\footrulewidth}{0.4pt}
+%\usepackage[draft]{graphics} % ohne Bilder (Entwurf)
+% Figures
+\usepackage{pdfpages}
+\usepackage{epstopdf}
+\usepackage{float}
+\usepackage{wrapfig}
+\usepackage[export]{adjustbox}
+\usepackage{graphics} % Bilder einbinden
+\nonfrenchspacing
+%
+% Abkürzungen
+\newcommand{\nach}{\, \mathrm{d}} % Zeichen f�r z.B. "Integral ... nach x"
+\newcommand{\divergenz}{\, \mathrm{div} \,} % Divergenz
+\newcommand{\grad}{\, \mathrm{grad} \,} % Gradient
+\newcommand{\rot}{\, \mathrm{rot} \,} % Rotation
+\newcommand{\laplace}{\Delta} % Laplace-Operator
+\newcommand{\arccot}{\, \mathrm{arccot} \,}
+\newcommand{\arsinh}{\, \mathrm{arsinh} \,}
+\newcommand{\arcosh}{\, \mathrm{arcosh} \,}
+\newcommand{\artanh}{\, \mathrm{artanh} \,}
+\newcommand{\arcoth}{\, \mathrm{arcoth} \,}
+\newcommand{\sgn}{\, \mathrm{sgn} \,}  % Signumfunktion
+%\newcommand{\si}{\, \mathrm{si} \,}  % si(x) = sin(x)/x
+\newcommand{\ld}{\, \mathrm{ld} \,}  % Logarithmus zur Basis 2
+\newcommand{\Si}{\, \mathrm{Si} \,}  % Integral von si(x)
+\newcommand{\f}{\, \mathrm{f} \,}  % all. Funktion
+\newcommand{\s}{\, \mathrm{s} \,}  % Sprung-Funktion
+\newcommand{\kz}{\! \times \!}  % Vektor-Kreuzprodukt
+\newcommand{\trafo}{\enspace\circ\!\!-\!\!\bullet\enspace} % Zeichen f�r "Transformierte von"
+\newcommand{\rtrafo}{\enspace\bullet\!\!-\!\!\circ\enspace} % Zeichen f�r "R�cktransformierte von"
+\newcommand{\vint}{\int\!\!\int\limits_V\!\!\int} % Volumenintegral
+\newcommand{\vstrichint}{\int\!\!\int\limits_{V'}\!\!\int} % gestrichenes Volumenintegral
+\newcommand{\aint}{\int\limits_a\!\!\int} % Fl�chenintegral
+\newcommand{\astrichint}{\int\limits_{a'}\!\!\int} % gestrichenes Fl�chenintegral
+\newcommand{\aoint}{\oint\limits_a\!\!\!\!\int} % Fl�chenh�llintegral  %+++ keine gute L�sung ! 
+\newcommand{\aostrichint}{\oint\limits_{a'}\!\!\!\!\int} % gestrichenes 	Fl�chenh�llintegral  %+++ keine gute L�sung ! 
+\newcommand{\sint}{\int\limits_s} % Wegintegral
+\newcommand{\sstrichint}{\int\limits_s} % gestrichenes Wegintegral
+\newcommand{\soint}{\oint\limits_s} % geschlossenes Wegintegral
+\newcommand{\lint}{\int\limits} % Integral mit den Grenzen ...
+\newcommand{\lsum}{\sum\limits} % Summe mit den Grenzen
+\newcommand{\llim}{\lim\limits} % Limes
+\newcommand{\olint}{\oint\limits} % H�llintegral �ber ...
+\newcommand{\intinfty}{\int\limits_{-\infty}^{\infty}} % Integral von Plus bis Minus unendlich
+\newcommand{\suminfty}{\sum\limits_{n=-\infty}^{\infty}} % Summe von Plus bis Minus unendlich
+\newcommand{\gefaltet}{\ast} % Faltung zweier Funktionen
+\newcommand{\bild}[2]{\raisebox{-0.4\height}{\resizebox{!}{#2}{\includegraphics{grafiken/#1}}}} %Grafiken einbinden (z.B. .eps-Dateien)
+\newcommand{\mod}{\, \mathrm{mod} \,} % Modulo-Operator
+\newcommand{\V}{\left(\begin{array}{c}} % Vektor 
+\newcommand{\Vend}{\end{array}\right)}  % Vektorende
+% damit kann man einen Vektor einfach so schreiben : "\V 5 \\ 3 \\ 7 \Vend"
+\newcommand{\sollgleich}{\raisebox{1ex}{\(!\atop =\)}} % soll gleich ... sein
+\newcommand{\bul}{\textbullet \quad} % Aufz�hlungspunkt, 1. Ebene
+\newcommand{\bull}{\textopenbullet \quad} % Aufz�hlungspunkt, 2. Ebene
+\newcommand{\heraus}{\(\bigodot\)} % Fluss aus der Bildebene heraus
+\newcommand{\hinein}{\(\bigotimes\)} % Fluss in die Bildebene hinein
+\newcommand{\kleinhinein}{\(\otimes\)} % Fluss in die Bildebene hinein
+\newcommand{\nicht}{\overline} % logische Negation (Strich ueber dem Symbol, ist besser lesbar als \bar)
+\newcommand{\vereinigt}{\cup} % Symbol: Vereinigung aus 2 Mengen
+\newcommand{\geschnitten}{\cap} % Symbol: Schnittmenge aus 2 Mengen
+\newcommand{\complement}{^c} % Symbol f�r Komplement�rmenge
+\newcommand{\aequivalent}{\quad \( \Leftrightarrow \) \quad} % �quivalenz
+\newcommand{\cv}{\, \mathrm{cv} \,} % Variationskoeffizent
+\newcommand{\var}{\, \mathrm{var} \,} % Varianz
+\newcommand{\cov}{\, \mathrm{cov} \,} % Kovarianz
+\newcommand{\geom}{\, \mathrm{geom} \,} % geometrische Verteilung
+\newcommand{\und}{\enspace \mathrm{\wedge} \enspace} % log. "und"
+\newcommand{\oder}{\enspace \mathrm{\vee} \enspace} % log. "oder"
+\newcommand{\C}{\textnormal{\small I}\!\!\!\mathbf{C}} %Zeichen f�r Menge der Komplexen Zahlen
+\newcommand{\N}{\mathbf{I}\!\!\!\mathbf{N}} %Zeichen f�r Menge der nat�rlichen Zahlen
+\newcommand{\R}{\mathbf{I}\!\!\!\mathbf{R}} %Zeichen f�r Menge der reellen Zahlen
+\newcommand{\ueber}{\choose} % "�ber" z.B. f�r Binominalkoeffizenten
+%
+\begin{document}
+%
+% Titelseite:
+\maketitle
+%
+% Inhaltsverzeichnis : (wird beim 2. mal compilieren automatisch erstellt)
+\setcounter{tocdepth}{2}
+\tableofcontents
+%
+
+%
+%\newpage
+%
+\input{chapters/Technologie/Technologie}
+\input{chapters/Transistoren/Transistoren}
+\input{chapters/Diode/Diode}
+\input{chapters/Stromquelle/Stromquelle}
+\input{chapters/Stromspiegel/Stromspiegel}
+\input{chapters/Verstaerker/Verstaerker}
+%\input{chapters/Frequenzverhalten/Frequenzverhalten}
+\input{chapters/OpAmp/OpAmp}
+\input{chapters/Stabilitaet/Stabilitaet}
+\input{chapters/OTA/OTA}
+\input{chapters/Spannungsref/Spannungsref}
+\input{chapters/Allgemeines/Allgemeines}
+
+
+
+
+
+
+
+
+
+%
+\end{document}
