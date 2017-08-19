@@ -78,14 +78,12 @@
 	\hline
 	\textbf{Ausgangsstrom} & \multicolumn{2}{c|}{\textbf{Ausgangsspannungsbereich} ($V_{DS}$-Bereich)}\\
 	($I_D$-,$V_{GS}$-Bereich)&Transistor ungesättigt ($\vert V_{DS}\vert < \vert V_{DS,sat}\vert$)&Transistor gesättigt ($\vert V_{DS} \vert \geq \vert V_{DS,sat} \vert$)\\ \hline
-	\multicolumn{3}{|c|}{\textbf{n-Kanal Transistor}} \\ \hline
-	EXP-Bereich&$I_D = I_M e^{\frac{V_{GS}-V_M}{n_M \Phi_t}}(1-e^{\frac{-V_{DS}}{\Phi_t}})\textcolor{gray}{(1 + \lambda V_{DS})}$&$I_D=I_M e^{\frac{V_{GS}-V_M}{n_M \Phi_t}}\textcolor{gray}{(1+\lambda V_{DS})}$\\ \hline
-	QUAD-Bereich&$I_D=B[(V_{GS}-V_T)V_{DS}-\frac{{V_{DS}}^2}{2}]\textcolor{gray}{(1+\lambda V_{DS})}$&$I_D=\frac{\beta}{2}(V_{GS}-V_T)^2 \textcolor{gray}{(1+\lambda V_{DS})}$\\ \hline
-	\multicolumn{3}{|c|}{\textbf{p-Kanal Transistor}} \\ \hline
-	EXP-Bereich&$I_D = I_M e^{-\frac{V_{GS}-V_M}{n_M \Phi_t}}(1-e^{\frac{-V_{DS}}{\Phi_t}})\textcolor{gray}{(1 - \lambda V_{DS})}$&$I_D=I_M e^{-\frac{V_{GS}-V_M}{n_M \Phi_t}}\textcolor{gray}{(1-\lambda V_{DS})}$\\ \hline
-	QUAD-Bereich&$I_D=-B[(V_{GS}-V_T)V_{DS}-\frac{{V_{DS}}^2}{2}]\textcolor{gray}{(1-\lambda V_{DS})}$&$I_D=-\frac{\beta}{2}(V_{GS}-V_T)^2 \textcolor{gray}{(1-\lambda V_{DS})}$\\
+	EXP-Bereich (n-Kanal)&$I_D = I_M e^{\frac{V_{GS}-V_M}{n_M \Phi_t}}(1-e^{\frac{-V_{DS}}{\Phi_t}})\textcolor{gray}{(1 + \lambda V_{DS})}$&$I_D=I_M e^{\frac{V_{GS}-V_M}{n_M \Phi_t}}\textcolor{gray}{(1+\lambda V_{DS})}$\\ \hline
+	QUAD-Bereich (n-Kanal)&$I_D=B[(V_{GS}-V_T)V_{DS}-\frac{{V_{DS}}^2}{2}]\textcolor{gray}{(1+\lambda V_{DS})}$&$I_D=\frac{\beta}{2}(V_{GS}-V_T)^2 \textcolor{gray}{(1+\lambda V_{DS})}$\\ \hline
+	EXP-Bereich (p-Kanal)&$I_D = I_M e^{-\frac{V_{GS}-V_M}{n_M \Phi_t}}(1-e^{\frac{-V_{DS}}{\Phi_t}})\textcolor{gray}{(1 - \lambda V_{DS})}$&$I_D=I_M e^{-\frac{V_{GS}-V_M}{n_M \Phi_t}}\textcolor{gray}{(1-\lambda V_{DS})}$\\ \hline
+	QUAD-Bereich (p-Kanal)&$I_D=-B[(V_{GS}-V_T)V_{DS}-\frac{{V_{DS}}^2}{2}]\textcolor{gray}{(1-\lambda V_{DS})}$&$I_D=-\frac{\beta}{2}(V_{GS}-V_T)^2 \textcolor{gray}{(1-\lambda V_{DS})}$\\
 	\hline
-\end{tabular}\\
+\end{tabular}\\ \\
 Wird die Kanallängenmodulation vernachlässigt, kann einfach der \textcolor{gray}{$(1 \pm\lambda V_{DS})$} Term weggelassen werden.
 
 \subsection{Parameter}
