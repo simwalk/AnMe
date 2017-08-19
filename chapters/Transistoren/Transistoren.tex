@@ -59,8 +59,8 @@
 \begin{minipage}[c]{0.65\textwidth}
 	\textbf{Gesättigt}, Stromquellen-Betrieb:\\
 	Geraden horizontal, dann ist $r_{DS} = \infty$ (idealer Transistor).\\
-	Anstieg der Geraden entspricht Ausgangsleitwert $g_o$ bzw. Ausgangswiderstand $r_{DS}$\\
-	$r_{DS} = \frac{1}{g_o} = \frac{dV_{DS}}{dI_D} \approx \frac{\Delta V_{DS}}{\Delta I_D}$\\[2ex]
+	Anstieg der Geraden entspricht Ausgangsleitwert $g_o$ o. Ausgangswiderstand $r_{DS}$\\
+	$r_{DS} = \frac{1}{g_o} = \frac{dV_{DS}}{dI_D} \approx \frac{\Delta V_{DS}}{\Delta I_D}$\\ \\
 	\textbf{Ungesättigt}, Widerstandsbetrieb:\\
 	Je steiler die Gerade, desto kleiner $r_{DS}$
 \end{minipage}
@@ -70,17 +70,7 @@
 	\includegraphics[width=1\linewidth]{chapters/Transistoren/images/Transferkennlinie}
 \end{minipage}
 \begin{minipage}{0.6\textwidth}
-	\includegraphics[width=1\linewidth]{chapters/Transistoren/images/Ausgangsstrombereich}
-%	\begin{tabular}{p{0.03cm}|p{2cm}|p{3cm}|p{4.5cm}|}
-%		\hline
-%		&\textbf{Ausgangs- strombereich} & \textbf{Mathematische Charakterisierung} & \textbf{Zugrundeliegender physikalischer Effekt} \\ \hline
-%		0&Leckstrom- bereich (LECK) & $I_D$ erreicht Minimalwert, der nicht weiter unterschritten werden kann & Drain-Substratdiode und Source-Substratdiode haben Leckströme im Substrat \\ \hline
-%		1&Exponentieller Bereich (EXP)&$I_D$ steigt exponentiell mit $V_{GS}$&Kanal zeigt schwache Inversion (Beim n-Kanal-Transistor: Ursprünglich p-leitender Kanal ist schwach n-leitend)\\ \hline
-%		2&Schwellen Bereich (MOD) &Keine handlichen Formeln für $I_D$ vorhanden&Kanal zeigt moderate Inversion (Kanalzustand liegt zwischen schwacher und starker Inversion)\\ \hline
-%		3&Quadratischer Bereich (QUAD)&$I_D$ steigt quadratisch mit $V_{GS}$& Kanal zeigt starke Inversion (Beim n-Kanal-Transistor: Ursprünglich p-leitender Kanal wirkt stark n-leitend) \\ \hline
-%		4&Linearer Bereich (LIN)&$I_D$ steigt annähernd linear mit $V_{GS}$ (halb QUAD, halb LIN)&Geschwindigkeitsänderung der Ladungsträger im Kanal (die Ladungsträger können nicht weiter beschleunigt werden)\\
-%		\hline
-%	\end{tabular}
+	\includegraphics[width=1\linewidth]{chapters/Transistoren/images/Ausgangsstrombereich} 
 \end{minipage}
 
 \subsection{Drainstromgleichungen}
@@ -114,14 +104,14 @@ Wird die Kanallängenmodulation vernachlässigt, kann einfach der \textcolor{gra
 	$I_M$&Drainstrom&Drainstrom an der Grenze zwischen schwacher und moderater Inversion.\\
 	&&$I_M=\frac{W}{L}\cdot I'_M$\\
 	&&$I'_M$ ist der spezifische Drainstrom an der Grenze\\ \hline
-	$n_M$&Unterschwellen-Neigungsfaktor&Der Faktor $n_M$ ist von der Source-Bulk-Spannung $V_{SB}$ abhängig:\\
-	&&$n_M=1+\frac{\gamma}{2\sqrt{V_{SB}+\Phi_0}}$\\
+	$n_M$&Unterschwellen-&Der Faktor $n_M$ ist von der Source-Bulk-Spannung $V_{SB}$ abhängig:\\
+	&Neigungsfaktor&$n_M=1+\frac{\gamma}{2\sqrt{V_{SB}+\Phi_0}}$\\
 	&&mit $\Phi_0 = 2\Phi_F \approx \SI{0.6}{\volt}$. Für $V_{SB} = 0$ erhalten wir $n_M = 1.39$.\\
 	&&Häufig wird ein Wert von $n_M \approx 1.5$ angegeben.\\ \hline
 	$a_A$&Early-Faktor&\textcolor{gray}{(gemäss Technologieparametern)}\\ \hline
 	$V_A$&Early-Spannung&$V_A \approx a_A \cdot L$ \hspace{0.5cm} $V_A$ ist immer positiv\\ \hline
-	$\lambda$&Kanallängen-Modulationsfaktor&inverser Wert der Early-Spannung\\
-	&&$\lambda = \frac{1}{V_A} \approx \frac{1}{a_AL}$\\
+	$\lambda$&Kanallängen-&inverser Wert der Early-Spannung\\
+	&Modulationsfaktor&$\lambda = \frac{1}{V_A + V_{DS,sat}} \approx \frac{1}{V_A} \approx \frac{1}{a_AL}$\\	
 	&&Bei der Handrechnung wird der MOS-Transistor meistens mit \textcolor{gray}{$\lambda = 0$} idealisiert\\ \hline
 	$B$,$\beta$&Transkonduktanz&Steilheit, Verstärkungsfaktor. Dieser Faktor ist im gesättigten ($\beta$) und\\
 	&&ungesättigten Bereich ($B$) grundsätzlich verschieden.\\
