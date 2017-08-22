@@ -169,13 +169,24 @@ Wird die Kanallängenmodulation vernachlässigt, kann einfach der \textcolor{gra
 	\includegraphics[height=3cm]{chapters/Transistoren/images/GschGate}&
 	\includegraphics[height=3cm]{chapters/Transistoren/images/GschDrain}\\ \hline
 	\textbf{Art}&Invertierender Verstärker&Nichtinvertierender Verstärker&Nichtinvertierender Verstärker\\ \hline
-	\textbf{Anwendung}&Verstärkung tiefe bis mittlere Frequenzen&Verstärker hohe Frequenzen (HF-Verstärker)&Spannungsfolger / Impedanzwandler\\ \hline
+	\textbf{Anwendung}&Verstärkung tiefe bis mittlere Frequenzen&Verstärker hohe Frequenzen (HF-Verstärker)&Spannungsfolger / Impedanzwandler / Leistungstreiber\\ \hline
 	\textbf{Eingang}&Gate&Source&Gate\\ \hline
 	\textbf{Ausgang}&Drain&Drain&Source\\ \hline
 	\textbf{$R_{in}$ / $R_{out}$}&gross/gross&klein/gross&gross/klein\\ \hline
 	\textbf{Verstärkung}&\textbf{Bei $1/g_m$,$R_D<<1/g_0$:}&Bei $1/g_m$,$R_D<<1/g_0$:&Bei $R_S$,$R_D<<1/g_0$:\\
 	&$a\approx -\frac{R_D}{R_S+\frac{1}{g_m}}$&$a\approx \frac{R_D}{R_S+\frac{1}{g_m}}$&$a\approx \frac{R_S}{R_S+\frac{1}{g_m}}$\\
-	&Bei $R_S = 0$: &Bei $R_S = 0$: &Idealer Source-Folger: $A\approx 1$\\
+	&Bei $R_S = 0$: &Bei $R_S = 0$: &Idealer Source-Folger: $a\approx 1$\\
 	&$a\approx -g_m(R_D||r_{DS})$&$a\approx g_m(R_D||r_{DS})(1+\frac{g_0}{g_m})$&($1/g_m<<R_S<<1/g_0$)\\ \hline
 	\multicolumn{4}{|l|}{$g_m=\frac{1}{r_S}$ \hspace{5mm} $g_0=\frac{1}{r_{DS}}=\frac{I_D}{V_A+V_{DS}}\approx\frac{I_D}{V_A}$ (Näherung für $V_A >> V_{DS}$) \hspace{5mm} $V_A = a_A \cdot L$ ($V_A = \SI{5}{\volt}\dots \SI{100}{\volt}$,Kanallängenabh.)}\\ \hline
+\end{tabular} \\ [1ex]
+\textbf{Innenwiderstände}\\
+\begin{tabular}{|p{0.3\textwidth}|p{0.3\textwidth}|p{0.3\textwidth}|}
+	\hline
+	\textbf{Drain}&\textbf{Gate}&\textbf{Source}\\
+	\hline
+	Näherung für $1/g_0>>R_s$&$r_{iG}\rightarrow \infty$&Näherung für $1/g_0>>R_D$\\
+	$r_{iD}\approx r_{DS}(1+\frac{R_S}{r_s})=\frac{1}{g_0}(1+g_mR_s)$&&$r_{iS}\approx r_s||r_{DS}=\frac{1}{g_m+g_0}$ \\
+	Näherung für $R_s=0$&&Näherung für $g_m$, $1/R_D>>R_D$\\
+	$r_{iD}\approx r_{DS}=\frac{1}{g_0}$&&$r_{iS}\approx r_S=\frac{1}{g_m}$\\
+	\hline
 \end{tabular}
