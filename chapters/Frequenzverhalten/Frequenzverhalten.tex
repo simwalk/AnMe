@@ -42,9 +42,10 @@ Für eine grobe Analyse des Frequenzverhaltens genügt es somit, die Knoten zu s
 	\includegraphics[width=1\linewidth]{chapters/Frequenzverhalten/images/miller}
 \end{minipage}
 \begin{minipage}[c]{0.5\textwidth}
-	\textbf{Bestimmung des für die Bandbreite verantwortlichen Pols:}
-	\begin{compactenum}
-		\item Setze alle unabhängigen Quellen = 0 (V $\rightarrow$ Kurzschluss, I $\rightarrow$ Leerlauf)
-		\item Berechne für alle Kapazitäten die zugehörige Zeitkonstante, wenn alle anderen C = 0.
-	\end{compactenum}
+	Die Miller-Kapazität Cm , die zwischen Ein- und Ausgang eines Verstärkers mit Verstärkung A liegt, erscheint
+	\begin{compactitem}
+		\item multipliziert mit (1-A) parallel zum Eingang ($C_{mi}$ : Miller Eingangs-Kapazität)
+		\item multipliziert mit (1-1/A) parallel zum Ausgang ($C_{mo}$ : Miller Ausgangskapazität)
+		\item $_Cm$ wird aus dem Schema entfernt und durch $C_{mi}$ und $C_{mo}$ ersetzt.
+	\end{compactitem}
 \end{minipage}
