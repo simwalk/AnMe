@@ -37,7 +37,13 @@ Für eine grobe Analyse des Frequenzverhaltens genügt es somit, die Knoten zu s
 	\item Knotenkapazität mittel: parasitäre Kapazität verstärkt durch Miller-Effekt. Häufig $C_{GD}$ eines verstärkenden Transistors.
 	\item Knotenkapazität klein: Knoten mit parasitären Kapazitäten. Von diesen Knoten ist in der Regel der Gate-Knoten mit der höchsten Kapazität belastet.
 \end{compactenum}
-\includegraphics[width=1\linewidth]{chapters/Frequenzverhalten/images/typ_c_werte}
+\begin{tabular}{|l|l|l|l|l|}
+	\textbf{Arbeitsbereich} & \textbf{$C_{GS}$} & \textbf{$C_{GD}$} & \textbf{$C_{SB}$}& \textbf{$C_{DB}$} \\
+	Gesättigt & $C_{GS0}+2/3C_{oxt}$ & $C_{GD0}$ & $C_{jSBt}+2/3C_{BCt}$ & $C_{jDBt}$ \\
+	Typ. Wert & 33\si{\femto \farad} & 1.2\si{\femto \farad} & 10\si{\femto \farad} & 7\si{\femto \farad} \\
+	Ungesättigt & $C_{GS0}+1/2C_{oxt}$ & $C_{GD0}+1/2C_{oxt}$ & $C_{jSBt}+1/2C_{BCt}$ & $C_{jDBt}+1/2C_{BCt}$ \\
+	Typ. Wert & 26\si{\femto \farad} & 26\si{\femto \farad} & 10\si{\femto \farad} & 10\si{\femto \farad} \\
+\end{tabular}
 \subsection{Miller Effekt}
 \begin{minipage}[c]{0.5\textwidth}
 	\includegraphics[width=1\linewidth]{chapters/Frequenzverhalten/images/miller}
