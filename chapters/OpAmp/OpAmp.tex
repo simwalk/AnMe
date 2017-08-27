@@ -27,6 +27,12 @@ Eigenschaften der Differenzstufe bei starker Inversion:\\
 \end{tabular}
 
 \subsection{Slew-Rate}
+\textbf{Vorgehen bei mehrstufigem Verstärker:}\\
+\begin{compactenum}
+	\item SR jeder einzelnen Verstärkerstufe untersuchen
+	\item SR auf den Ausgang beziehen ($\cdot a$)
+	\item Verstärkerstufe mit kleinster SR ist dominant.
+\end{compactenum}
 \begin{minipage}[c]{0.5\textwidth}
 	\begin{tabular}{ll}
 		Definition Slew-Rate&$SR=\frac{dv_o}{dt}=\frac{I_{out}}{C_L}$ [\SI{}{\volt/\micro\second}]\\
@@ -37,10 +43,7 @@ Eigenschaften der Differenzstufe bei starker Inversion:\\
 	Designregel für grosse SR: $I_Q$ gross, $C_L$ klein.
 \end{minipage}
 \begin{minipage}[c]{0.5\textwidth}
-	\textbf{Vorgehen bei mehrstufigem Verstärker:}\\
-	1. SR jeder einzelnen Verstärkerstufe untersuchen\\
-	2. SR auf den Ausgang beziehen ($\cdot a$)\\
-	3. Verstärkerstufe mit kleinster SR ist dominant.
+	
 \end{minipage}
 
 \subsection{Wichtige Kenndaten/Formeln}
