@@ -16,46 +16,6 @@ Loop-Gain $T(s)$: $T(s) = A(s)\cdot F(s)$\\
 	Phasenmarge&$\varphi_M = \SI{180}{\degree}-\Phi = \SI{90}{\degree}-arctan(\frac{GBP}{f_{P2}})$\\
 	Designregel&Wähle 2. Pol ($f_{nd}$) bei ca. $3\cdot GBP$\\
 	&Dies ergibt eine Phasenmarge von \SI{72}{\degree} und somit kaum Überschwingen
-\end{tabular}\\[2ex]
-\begin{minipage}[c]{0.45\textwidth}
-	Jeder Knoten $N$ bildet einen Pol bei der Frequenz $f_N$, der sich wie folgt berechnet:
-	$f_N=\frac{1}{2\pi\cdot R_N C_N}$\\[2ex]
-	\textbf{Grobe Analyse:} Die Knoten mit hohen RC-Produkten suchen. Dort entstehen Systempole, welche einen Abfall von \SI{20}{\decibel/Dekade} im Frequenzgang einleiten.
-	\subsection{Widerstände}
-	\textbf{Knotenimpedanz praktisch unendlich:}\\
-	Gate: $r_{iG} -> \infty$\\
-	\textbf{Knotenimpedanz sehr hoch:}\\
-	Drain des Transistors wenn als Stromquelle beschaltet: $r_{ds}= \frac{1}{g_0}$\\
-	\textbf{Knotenimpedanz tief:}\\
-	Drain des Transistor in Diodenschaltung, Source des Transistors in Stromquellenschaltung: $\frac{1}{g_m}$
-	
-	\subsection{Kapazitäten}
-	\textbf{Knotenkapazität gross:}\\
-	C als passive Schaltungskomponente\\
-	\textbf{Knotenkapazität mittel:}\\
-	parasitäre Kapazität verstärkt durch Miller-Effekt. Häufig $C_{GD}$ eines verstärkenden Transistors.\\
-	\textbf{Knotenkapazität klein:}\\
-	Knoten mit parasitären Kapazitäten. Von diesen Knoten ist in der Regel der Gate-Knoten mit der höchsten Kapazität belastet.
-\end{minipage}
-\begin{minipage}[c]{0.5\textwidth}
-	\subsection{Miller-Effekt}
-	Die Miller-Kapazität $C_m$ zwischen Ein- und Ausgang eines Verstärkers mit Verstärkung A liegt, erscheint
-	\begin{itemize}
-		\item multipliziert mit (1-A) parallel zum Eingang ($C_{mi}$)
-		\item multipliziert mit (1-1/A) parallel zum Ausgang ($C_{mo}$)
-		\item $C_m$ wird aus dem Schema entfernt und durch $C_{mi}$ und $C_{mo}$ ersetzt.
-	\end{itemize}
-	\subsection{Darstellung}
-	1. DC Verstärkung berechnen (aus Kleinsignalersatzschaltung für Niederfrequenz)\\
-	2. Die für die Übertragungsfunktion relevanten Pole finden. (An welchem Knoten befindet sich ein hohes RC Produkt?)\\
-	3. Pole im Bode-Diagramm einzeichnen
-\end{minipage}\\
-\subsection{Typische Kapazitäten}
-\begin{tabular}{|l|l|l|l|l|}
-	\hline
-	&$C_{GS}$&$C_{GD}$&$C_{SB}$&$C_{DB}$\\ \hline
-	Gesättigt&$C_{GS0} + \frac{2}{3} C_{oxt}$&$C_{GD0}$&$C_{jSBt}+\frac{2}{3}C_{BCt}$&$C_{jDBt}$\\
-	Typ. Wert&$\SI{33}{\femto\farad}$&$\SI{1.2}{\femto\farad}$&$\SI{10}{\femto\farad}$&$\SI{7}{\femto\farad}$\\ \hline
-	Ungesättigt&$C_{GS0}+\frac{1}{2}C_{oxt}$&$C_{GD0}+\frac{1}{2}C_{oxt}$&$C_{jSBt}+\frac{1}{2}C_{BCt}$&$C_{jDBt}+\frac{1}{2}C_{BCT}$\\
-	Typ. Wert&$\SI{26}{\femto\farad}$&$\SI{26}{\femto\farad}$&$\SI{10}{\femto\farad}$&$\SI{10}{\femto\farad}$\\ \hline
-\end{tabular}\\
+\end{tabular}\\[1ex]
+Jeder Knoten $N$ bildet einen Pol bei der Frequenz $f_N$, der sich wie folgt berechnet: b$f_N=\frac{1}{2\pi\cdot R_N C_N}$\\
+\textbf{Grobe Analyse:} Die Knoten mit hohen RC-Produkten suchen. Dort entstehen Systempole, welche einen Abfall von \SI{20}{\decibel/Dekade} im Frequenzgang einleiten.
