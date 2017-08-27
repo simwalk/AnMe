@@ -56,7 +56,9 @@ Eigenschaften der Differenzstufe bei starker Inversion:\\
 	Common mode rejection ratio&$v_{DM}=v_{in1}-v_{in2}$ differential mode, Gegentaktverstärkung\\
 	&$v_{CM}=\frac{v_{in1}+v_{in2}}{2}$ common mode, Gleichtaktverstärkung\\
 	&$CMRR=|\frac{a_{DM}}{a_{CM}}|=\frac{r_q}{r_s}=\frac{g_m}{g_{0b}}$ mit $r_q$: Innenwiderstand von $I_q$, Gleichtaktunterdrückung\\
-	Power supply rejection ratio& $PSRR_+=|\frac{a_{DM}}{a_{PS+}}|$\\
+	Power supply rejection ratio& $a_{ps}=\frac{\delta V_O}{\delta V_{DD}}\right|_{V_I=konst}
+	=\frac{v_O}{v_{DD}}\right|_{v_I=0}$ \\
+	&$PSRR_+=|\frac{a_{DM}}{a_{PS+}}|$\\
 	&$PSRR_-=|\frac{a_{DM}}{a_{PS-}}|$\\
 	Offset-Designregeln& \textbf{Random Offset}\\
 	&Matching von Parametern der Transistoren: Layout für gutes Matching $\rightarrow$ Common Centroid, höheres $V_{GS}-V_T$ für Stromspiegel, grosses W/L für Eingangstransistoren\\
