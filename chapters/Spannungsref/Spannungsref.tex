@@ -47,3 +47,5 @@ Die Bandgap ist eine Möglichkeit, eine stabile Spannungsreferenz zu erhalten.\\
 	$V_{EB}=\Phi_t \ln\left( \frac{-I_C}{I_s'A_E}\right)$ mit $I_s'$= Sättigungstrom pro Flächeneinheit\\
 	$K = \frac{R_2}{R_3}\cdot \ln\left( \frac{R_2}{R_1}\cdot\frac{A_2}{A_1}\right)$\\
 \end{minipage}
+\subsubsection{Offsetfehler}
+Die Bandgap-Schaltung hat den Nachteil, dass Vref relativ stark vom Offset-Spannungsfehler $V_{off}$ des Opamp abhängt. Man kann zeigen dass $V_{ref}=V_{EV1}+\frac{R_2}{R_3}\cdot\Phi_t\cdot\lbrace\left[\frac{R_2A_2}{R_1A_1}\cdot\left(1-\frac{V_{eff}{R_2I_2}\right)\right]-\left(1+\frac{R_2}{R_3}\right)\cdot V_{off}$
