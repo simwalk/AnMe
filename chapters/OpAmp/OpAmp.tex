@@ -53,7 +53,7 @@ Eigenschaften der Differenzstufe bei starker Inversion:\\
 	&Wenn $V_{DSsat}\approx \sqrt{\frac{2I_D}{\beta}}$ dann gilt:\\
 	&$V_{inp,max}=(V_{DD}-V_{SS})-V_{T,P1}-\sqrt{\frac{I_{SS}}{\beta P_1}}+V_{T,N1}$\\
 	&$V_{inp,min}=V_{SS}+\sqrt{\frac{2I_{SS}}{\beta N_5}}+V_{T,N}+\sqrt{\frac{I_{SS}}{\beta N_1}}$\\
-	Common mode rejection ratio&$v_{DM}=v_{in1}-v_{in2}$ differential mode, Gegentaktverstärkung\\
+	Common mode rejection ratio&$a_{DM}=\left.\frac{v_O}{V_{DM}}\right|_{v_{CM}=0}$ differential mode, Gegentaktverstärkung\\
 	&$v_{CM}=\frac{v_{in1}+v_{in2}}{2}$ common mode, Gleichtaktverstärkung\\
 	&$CMRR=|\frac{a_{DM}}{a_{CM}}|=\frac{r_q}{r_s}=\frac{g_m}{g_{0b}}$ mit $r_q$: Innenwiderstand von $I_q$, Gleichtaktunterdrückung\\
 	Power supply rejection ratio& $a_{ps}=\left.\frac{\delta V_O}{\delta V_{DD}}\right|_{V_I=konst}
@@ -63,6 +63,6 @@ Eigenschaften der Differenzstufe bei starker Inversion:\\
 	Offset-Designregeln& \textbf{Random Offset}\\
 	&Matching von Parametern der Transistoren: Layout für gutes Matching $\rightarrow$ Common Centroid, höheres $V_{GS}-V_T$ für Stromspiegel, grosses W/L für Eingangstransistoren\\
 	&\textbf{Systematic Offset}\\
-	&Symmetrie der Differenzstufe, gleiche $V_{DS}$ und $L$ der zu einem Stromspiegel gehörenden Transistoren, gleiche Stromdichten $\frac{I}{W/L}$ in Stromspiegeltransistoren\\
+	&Symmetrie der Differenzstufe, gleiche $V_{DS}$ und $L$ der zu einem Stromspiegel gehörenden Transistoren, gleiche Stromdichten $\frac{I_D}{W/L}$ in Stromspiegeltransistoren\\
 	& \textbf{}
 \end{tabular}
