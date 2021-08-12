@@ -66,10 +66,10 @@
 \end{minipage}
 
 \subsubsection{Transferkennlinie}
-\begin{minipage}{0.4\textwidth}
+\begin{minipage}{0.38\textwidth}
 	\includegraphics[width=1\linewidth]{chapters/Transistoren/images/Transferkennlinie}
 \end{minipage}
-\begin{minipage}{0.6\textwidth}
+\begin{minipage}{0.58\textwidth}
 	\includegraphics[width=1\linewidth]{chapters/Transistoren/images/Ausgangsstrombereich} 
 \end{minipage}
 
@@ -78,13 +78,14 @@
 	\hline
 	\textbf{Ausgangsstrom} & \multicolumn{2}{c|}{\textbf{Ausgangsspannungsbereich} ($V_{DS}$-Bereich)}\\
 	($I_D$-,$V_{GS}$-Bereich)&Transistor ungesättigt ($\vert V_{DS}\vert < \vert V_{DS,sat}\vert$)&Transistor gesättigt ($\vert V_{DS} \vert \geq \vert V_{DS,sat} \vert$)\\ \hline
-	EXP-Bereich (n-Kanal)&$I_D = I_M e^{\frac{V_{GS}-V_M}{n_M \Phi_t}}(1-e^{\frac{-V_{DS}}{\Phi_t}})\textcolor{gray}{(1 + \lambda V_{DS})}$&$I_D=I_M e^{\frac{V_{GS}-V_M}{n_M \Phi_t}}\textcolor{gray}{(1+\lambda V_{DS})}$\\ \hline
-	QUAD-Bereich (n-Kanal)&$I_D=B[(V_{GS}-V_T)V_{DS}-\frac{{V_{DS}}^2}{2}]\textcolor{gray}{(1+\lambda V_{DS})}$&$I_D=\frac{\beta}{2}(V_{GS}-V_T)^2 \textcolor{gray}{(1+\lambda V_{DS})}$\\ \hline
-	EXP-Bereich (p-Kanal)&$I_D = I_M e^{-\frac{V_{GS}-V_M}{n_M \Phi_t}}(1-e^{\frac{-V_{DS}}{\Phi_t}})\textcolor{gray}{(1 - \lambda V_{DS})}$&$I_D=I_M e^{-\frac{V_{GS}-V_M}{n_M \Phi_t}}\textcolor{gray}{(1-\lambda V_{DS})}$\\ \hline
-	QUAD-Bereich (p-Kanal)&$I_D=-B[(V_{GS}-V_T)V_{DS}-\frac{{V_{DS}}^2}{2}]\textcolor{gray}{(1-\lambda V_{DS})}$&$I_D=-\frac{\beta}{2}(V_{GS}-V_T)^2 \textcolor{gray}{(1-\lambda V_{DS})}$\\
+	EXP-Bereich (n-Kanal)&$I_D = I_M e^{\frac{V_{GS}-V_M}{n_M V_{Temp}}}(1-e^{\frac{-V_{DS}}{V_{Temp}}})$&$I_D=I_M e^{\frac{V_{GS}-V_M}{n_M V_{Temp}}}$\\ \hline
+	QUAD-Bereich (n-Kanal)&$I_D=\mu C_{ox}\cdot \left(\frac{W}{L}\right)[(V_{GS}-V_T)V_{DS}-\frac{{V_{DS}}^2}{2}]$&$I_D=\frac{\mu C_{ox}}{2}\cdot \left(\frac{W}{L}\right)(V_{GS}-V_T)^2$\\ \hline
+	EXP-Bereich (p-Kanal)&$I_D = I_M e^{-\frac{V_{GS}-V_M}{n_M V_{Temp}}}(1-e^{\frac{-V_{DS}}{V_{Temp}}})$&$I_D=I_M e^{-\frac{V_{GS}-V_M}{n_M V_{Temp}}}$\\ \hline
+	QUAD-Bereich (p-Kanal)&$I_D=-\mu C_{ox}\cdot \left(\frac{W}{L}\right)[(V_{GS}-V_T)V_{DS}-\frac{{V_{DS}}^2}{2}]$&$I_D=-\frac{\mu C_{ox}}{2}\cdot \left(\frac{W}{L}\right)(V_{GS}-V_T)^2$\\
 	\hline
 \end{tabular}\\ \\
-Wird die Kanallängenmodulation vernachlässigt, kann einfach der \textcolor{gray}{$(1 \pm\lambda V_{DS})$} Term weggelassen werden.
+Für die Kanallängenmodulation, muss noch mit dem Faktor $(1 \pm\lambda V_{DS})$ multipliziert werden. ($+$ für n-Kanal, $-$ für p-Kanal)\\
+\textcolor{red}{Achtung:} Beim Umformen nach $V_{GS}$ muss die Wurzel negativ genommen werden (nur für p-Kanal Transistor).
 
 \subsection{Parameter}
 \begin{tabular}{|p{0.05\textwidth}|p{0.21\textwidth}|p{0.64\textwidth}|}
@@ -93,7 +94,7 @@ Wird die Kanallängenmodulation vernachlässigt, kann einfach der \textcolor{gra
 	&&im QUAD-Bereich:	$V_{DS,sat} = V_{GS}-V_T$\\ \hline
 	$V_T$&Schwellenspannung&Typisch \SI{0.6}{\volt} beim n-Kanal, resp. \SI{-0.6}{\volt} beim p-Kanal.\\
 	&& $V_T$ ist stark von der Source-Bulk-Spannung abhängig (Body-Effekt):\\
-	&&$V_T = V_{T0}\pm \Delta V_T$ mit $\Delta V_T = \gamma \left( \sqrt{V_{SB} \pm \Phi_0} - \sqrt{\Phi_0}\right)$\\
+	&&$V_T = V_{T0}\pm \Delta V_T$ mit $\Delta V_T = \gamma \left( \sqrt{V_{SB} \pm \Phi_0} - \sqrt{\Phi_0}\right)$ \qquad $\Phi_0 = 2\Phi_F \approx \SI{0.6}{\volt}$\\
 	&&(+ für n-Kanal-Transistoren, - für p-Kanal Transistoren)\\
 	&& $\gamma_N \approx 0.6 \sqrt{V}$ bzw. $\gamma_P \approx 0 \sqrt{V}$ ($\sqrt{V}$ ist die Einheit von $\gamma$)\\
 	&&Handrechnung: $\gamma \approx \gamma_N \approx \gamma_P \approx 0.6\sqrt{V}$\\ \hline
@@ -140,24 +141,55 @@ Wird die Kanallängenmodulation vernachlässigt, kann einfach der \textcolor{gra
 \end{tabular}
 
 \subsection{Kleinsignalparameter}
-\begin{tabular}{|p{0.2\textwidth}|p{0.35\textwidth}|p{0.35\textwidth}|}
-	\hline
-	&\textbf{Transistor ungesättigt}&\textbf{Transistor gesättigt}\\ \hline
-	weak inversion&Kanalwiderstand bei $V_{DS}=0$:&Kanalwiderstand:\\
-	&$r_{DS0}=\frac{dV_{DS}}{dI_D}\vert_{V_{DS}=0} = \frac{\Phi_t}{I_{D0}}$ &$r_{DS}=\frac{1}{g_0}=\frac{dV_{DS}}{dI_D}=\frac{V_A+V_{DS}}{I_D}\approx\frac{V_A}{I_D}$\\
-	&Kanalwiderstand bei $V_{DS} = \SI{0}{\volt} \dots V_{DS,sat}$:&\\
-	&$r_{DS}=\frac{dV_{DS}}{dI_D}\approx \frac{\Phi_t}{I_D}e^{\frac{V_{DS}}{\Phi_t}}$ (ungenau, kaum benötigt)&\\ \cline{2-3}
-	&$g_m$ nicht benötigt&Steilheit\\
-	&&$g_m = \frac{dI_D}{V_{GS}}=\frac{I_D}{n_M\Phi_t}$\\ \hline
-	strong inversion&Kanalwiderstand bei $V_{DS}=0$:&Kanalwiderstand:\\
-	&$r_{DS0}=\frac{dV_{DS}}{dI_D}\vert_{V_{DS}=0}=\frac{1}{\beta(V_{GS}-V_T)\textcolor{gray}{(1+\lambda V_{DS})}}$&$r_{DS}=\frac{1}{g_0}=\frac{dV_{DS}}{dI_D}=\frac{V_A+V_{DS}}{I_D}\approx \frac{V_A}{I_D}$\\
-	&Kanalwiderstand bei $V_{DS}=\SI{0}{\volt} \dots V_{DS,sat}$:&\\
-	&$r_{DS}=\frac{dV_{DS}}{dI_D}=\frac{1}{\beta[(V_{GS}-V_T)-V_{DS}]\textcolor{gray}{(1+\lambda V_{DS})}}$&\\ \cline{2-3}
-	&$g_m$ nicht benötigt&Steilheit (zwei Formeln)\\
-	&&$g_m = \frac{dI_D}{V_{GS}}=\beta(V_{GS}-V_T)\textcolor{gray}{(1+\lambda V_{DS})}$\\
-	&&$g_m = \frac{dI_D}{V_{GS}}=\sqrt{2I_D\beta\textcolor{gray}{(1+\lambda V_{DS})}}=\frac{2I_D}{V_{GS}-V_T}$\\ 
-	&&$g_{mb}= \frac{dI_D}{V_{SB}}= -g_m(n_m-1)$ wobei \\ &&$n_m=1+\frac{\lambda}{2\sqrt{V_{SB}+\Phi_0}}\approx 1.5$ (bei $V_{SB}=0$)\\      \hline
+Widerstände immer Positiv!\\
+\subsubsection{$r_{DS0}$ und $g_0$}
+\begin{tabular}{|l|l|l|}
+    \hline
+    & ungesättigt & gesättigt\\
+    \hline
+    weak inversion & $r_{DS0} = \frac{V_{temp}}{|I_{D\infty}|}$ & \\
+                   & $g_0 = \frac{|I_{D\infty}|- |I_D|}{V_{temp}}$ & $g_0 = \frac{|I_D|}{V_A+|V_{DS}|}$\\
+    \hline
+    strong inversion & $r_{DS0} = \frac{1}{\mu C_{ox} \left(\frac W L\right) (|V_{GS}|-|V_{T}|)\color{gray} (1+\lambda|V_{DS}|)}$&\\
+    &$g_0 = \mu C_{ox} \left(\frac W L\right) (|V_{GS}|-|V_T|-|V_{DS}|) \color{gray} (1+\lambda|V_{DS}|)$& $g_0 = \frac{|I_D|}{V_A + |V_{DS}|}$\\
+    \hline
+\end{tabular}\\
+
+\subsubsection{$g_m$}
+$g_m$ wird nur für den gesättigten Bereich benötigt.\\
+\begin{tabular}{|l|l|}
+    \hline
+    weak inversion & $g_m = \frac{|I_D|}{n_m V_{temp}}$ \qquad $n_m = 1+\frac{\gamma}{2\sqrt{|V_{SB}|+|2\phi_F|}}$ \quad $|2\phi_F| \approx 0.6V$\\
+    \hline
+    strong inversion & $g_m = \mu C_{ox} \left(\frac W L\right) (|V_{GS}| - V_T)\color{gray} (1 + \lambda |V_{DS}|)$\\
+    & $g_m = \sqrt{2 \mu C_{ox} |I_D| \color{gray} (1+\lambda(|V_{DS}|)}$\\
+    \hline
 \end{tabular}
+
+\subsubsection{$g_{mb}$}
+$g_{mb}$ wird nur für strong inversion und in Sättigung verwendet.\\
+$g_{mb} = -g_m(n_m - 1)$ \qquad $n_m = 1+\frac{\gamma}{2\sqrt{|V_{SB}|+|2\phi_F|}}$ \quad $|2\phi_F| \approx 0.6V$
+
+%\begin{tabular}{|p{0.2\textwidth}|p{0.35\textwidth}|p{0.35\textwidth}|}
+%	\hline
+%	${\color{red}\textbf{-}}$ für p-Kanal&\textbf{Transistor ungesättigt}&\textbf{Transistor gesättigt}\\ \hline
+%	weak inversion&Kanalwiderstand bei $V_{DS}=0$:&Kanalwiderstand:\\
+%	&$r_{DS0}=\frac{dV_{DS}}{dI_D}\vert_{V_{DS}=0} = \frac{\Phi_t}{{\color{red}\textbf{-}}I_{D0}}$ &$r_{DS}=\frac{1}{g_0}=\frac{dV_{DS}}{dI_D}=\frac{V_A+V_{DS}}{{\color{red}\textbf{-}}I_D}\approx\frac{V_A}{{\color{red}-}I_D}$\\
+%	&Kanalwiderstand bei $V_{DS} = \SI{0}{\volt} \dots V_{DS,sat}$:&\\
+%	&$r_{DS}=\frac{dV_{DS}}{dI_D}\approx \frac{\Phi_t}{{\color{red}\textbf{-}}I_D}e^{\frac{V_{DS}}{\Phi_t}}$ (ungenau, kaum benötigt)&\\ \cline{2-3}
+%	&$g_m$ nicht benötigt&Steilheit\\
+%	&&$g_m = \frac{dI_D}{V_{GS}}=\frac{{\color{red}\textbf{-}}I_D}{n_M\Phi_t}$\\ \hline
+%	strong inversion&Kanalwiderstand bei $V_{DS}=0$:&Kanalwiderstand:\\
+%	&$r_{DS0}=\frac{dV_{DS}}{dI_D}\vert_{V_{DS}=0}=\frac{1}{\beta(V_{GS}-V_T)\textcolor{gray}{(1+\lambda V_{DS})}}$&$r_{DS}=\frac{1}{g_0}=\frac{dV_{DS}}{dI_D}=\frac{{\color{red}\textbf{-}}V_A+V_{DS}}{I_D}\approx \frac{{\color{red}\textbf{-}}V_A}{I_D}$\\
+%	&Kanalwiderstand bei $V_{DS}=\SI{0}{\volt} \dots V_{DS,sat}$:&\\
+%	&$r_{DS}=\frac{dV_{DS}}{dI_D}={\color{red}\textbf{-}}\frac{1}{\beta[(V_{GS}-V_T)-V_{DS}]\textcolor{gray}{(1+\lambda V_{DS})}}$&\\ \cline{2-3}
+%	&$g_m$ nicht benötigt&Steilheit (zwei Formeln)\\
+%	&&$g_m = \frac{dI_D}{V_{GS}}={\color{red}\textbf{-}}\beta(V_{GS}-V_T)\textcolor{gray}{(1+\lambda V_{DS})}$\\
+%	&&$g_m = \frac{dI_D}{V_{GS}}=\sqrt{{\color{red}\textbf{-}}2I_D\beta\textcolor{gray}{(1+\lambda V_{DS})}}=\frac{{\color{red}\textbf{-}}2I_D}{V_{GS}-V_T}$\\ 
+%	&&$g_{mb}= \frac{dI_D}{V_{SB}}= -g_m(n_m-1)$ wobei \\ &&$n_m=1+\frac{\lambda}{2\sqrt{V_{SB}+\Phi_0}}\approx 1.5$ (bei $V_{SB}=0$)\\      \hline
+%\end{tabular}
+
+%\cfbox{red}{\textcolor{red}{Achtung:} Faktor für Kanallängenmodulation ist für p-Kanal ist: $(1-\lambda(V_{DS}- V_{DS,sat})$}
 
 \section{Grundschaltungen mit MOS-Transistoren (Kap. 6)} 
 

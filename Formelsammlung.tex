@@ -26,6 +26,7 @@
 \usepackage[utf8]{inputenc}
 %\usepackage[latin1]{inputenc} 
 \usepackage{geometry}
+\usepackage{amsmath}
 % 
 % Seitengeometrie festlegen:
 \geometry{left=1.5cm,textwidth=19cm,top=2cm,textheight=26cm}
@@ -51,6 +52,7 @@
 \usepackage[export]{adjustbox}
 \usepackage{graphics} % Bilder einbinden
 \usepackage{longtable}
+\usepackage{xcolor}
 \nonfrenchspacing
 %
 % Abkürzungen
@@ -90,7 +92,7 @@
 \newcommand{\suminfty}{\sum\limits_{n=-\infty}^{\infty}} % Summe von Plus bis Minus unendlich
 \newcommand{\gefaltet}{\ast} % Faltung zweier Funktionen
 \newcommand{\bild}[2]{\raisebox{-0.4\height}{\resizebox{!}{#2}{\includegraphics{grafiken/#1}}}} %Grafiken einbinden (z.B. .eps-Dateien)
-\newcommand{\mod}{\, \mathrm{mod} \,} % Modulo-Operator
+%\newcommand{\mod}{\, \mathrm{mod} \,} % Modulo-Operator
 \newcommand{\V}{\left(\begin{array}{c}} % Vektor 
 \newcommand{\Vend}{\end{array}\right)}  % Vektorende
 % damit kann man einen Vektor einfach so schreiben : "\V 5 \\ 3 \\ 7 \Vend"
@@ -116,6 +118,12 @@
 \newcommand{\R}{\mathbf{I}\!\!\!\mathbf{R}} %Zeichen f�r Menge der reellen Zahlen
 \newcommand{\ueber}{\choose} % "�ber" z.B. f�r Binominalkoeffizenten
 %
+
+\newcommand{\cfbox}[2]{%
+    \colorlet{currentcolor}{.}%
+    {\color{#1}%
+    \fbox{\color{currentcolor}#2}}%
+}
 
 % Everything compact as posssible
 \usepackage{paralist}
