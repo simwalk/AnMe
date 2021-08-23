@@ -1,0 +1,30 @@
+\section{Miller OTA Rezept}
+
+\begin{figure}[h]
+\includegraphics[width=0.6\linewidth]{chapters/OTA/images/MillerOTA}
+\end{figure}
+
+Gesucht ist $C_C$ damit OTA Stabil und Phasenmarge von etwa $70°$.
+
+\subsection{Variante 1}
+\begin{enumerate}
+    \item Neue 2. Polfrequenz berechnen:\\[4pt]
+        $ f_{nd} = \dfrac{g_{mP3}}{2\pi C_L} $
+    \item $ GBW = \dfrac{f_{nd}}{3} $
+    \item Polfrequenz von Pol 1 berechnen:\\[4pt]
+        $ \dfrac{GBW}{a_{tot}} \qquad a_{tot} \widehat{=} \text{Totale Verstärkung} $
+    \item $C_C$ berechnen:\\[4pt]
+        $ C_C = \dfrac{1}{2 \pi a_2 (r_{dsP2} || r_{dsN2})} \qquad a_{2} \widehat{=} \text{Verstärkung der Verstärkerstufe} $
+\end{enumerate}
+
+\subsection{Variante 2}
+\begin{align*}
+    3\times GBW &= \dfrac{g_{m{P3}}}{2\pi C_L}\\
+    \dfrac{3 g_{mN2}}{2\pi C_C} &= \dfrac{g_{m{P3}}}{2\pi C_L}
+\end{align*}
+Formel nach $C_C$ auflösen:
+\begin{equation*}
+    C_C = \dfrac{3g_{mN2} C_L}{g_{mP3}}
+\end{equation*}
+%$3\times GBW = \dfrac{g_{m{P3}}}{2\pi C_L}$\\
+
